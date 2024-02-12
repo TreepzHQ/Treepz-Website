@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const TechCommLogos = () => {
   return (
-    <div className="w-full sm:w-[864px] px-4 flex-wrap mx-auto gap-4 flex justify-between items-center my-[70px] sm:my-[176px]">
+    <div className="w-full sm:w-[864px] px-4 flex-wrap mx-auto gap-4 flex justify-between items-center my-[20px] sm:my-[176px]">
         <Image src="/techs/techcrunch.png" alt="tech crunch" width={66} height={32} />
         <Image src="/techs/techeconomy.png" alt="tech Economy" width={237} height={32} />
         <Image src="/techs/TechCabal.png" alt="tech cabal" width={40.1} height={40} />
