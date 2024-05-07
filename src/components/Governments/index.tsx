@@ -247,8 +247,8 @@ Treepz tailors charter solutions for any government need, from large-scale deplo
       <div className="mt-20">
         <PopularCitiesCarousel />
       </div>
-      <TechCommLogos />
-      <BetterTogetherComponent />
+
+
     </div>
   );
 };
