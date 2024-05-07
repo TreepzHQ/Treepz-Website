@@ -15,12 +15,12 @@ const WeddingComponent = () => {
 
     return (
         <>
-            <div className="w-full bg-[#FDF3D8] pt-5 sm:pt-[38px] pb-5 sm:pb-[60px] mt-10 sm:mt-20">
+            <div className="w-full bg-[#FDF3D8] pt-5 sm:pt-[38px] pb-5 sm:pb-[60px] mt-10 sm:mt-[72px]">
                 <div className="container px-4 sm:px-20 flex flex-col gap-5 sm:flex-row justify-between">
                     <div className="w-full sm:w-[622px] pt-[32px] sm:pt-[64px] px-5 sm:px-10 pb-[30px] sm:pb-[90px] flex flex-col bg-white space-y-4 sm:space-y-8 rounded-2xl">
                         <h1 className="text-[28px] sm:text-[56px] font-bold text-[#212529] sm:leading-[64px]">Treepz for Weddings</h1>
-                        <div className="flex space-y-8 flex-col text-lg sm:text-xl">
-                            <p>Weddings are tough to plan. Finding wedding transportation shouldn’t be.</p>
+                        <div className="flex space-y-8 flex-col font-normal text-lg sm:text-xl text-[#212529]">
+                            <p>Weddings are tough to plan. Finding wedding <br/> transportation shouldn’t be.</p>
                             <p>Book Treepz for a seemless wedding transportation.</p>
                         </div>
                         <Button
