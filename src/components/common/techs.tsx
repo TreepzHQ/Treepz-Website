@@ -6,7 +6,8 @@ const TechCommLogos = () => {
     <div className='my-[20px] sm:my-[176px] '>
 <h1 className="text-center text-[20px] mb-8">WHAT THE MEDIA SAYS ABOUT US</h1>
       <div className="w-full sm:w-[864px] px-4 flex-wrap mx-auto gap-4 flex justify-between items-center">
-                <Link href="https://techcrunch.com/2021/11/22/nigerian-maas-startup-treepz-closes-2-8m-seed-round-to-fund-east-african-expansion/">
+                <Link  target="_blank" href="https://techcrunch.com/2021/11/22/nigerian-maas-startup-treepz-closes-2-8m-seed-round-to-fund-east-african-expansion/">
+
 
                     <Image
                         src="/techs/techcrunch.png"
@@ -16,7 +17,7 @@ const TechCommLogos = () => {
                     />
 
                 </Link>
-                <Link href='https://techeconomy.ng/tag/treepz/'>
+                <Link target="_blank" href='https://techeconomy.ng/tag/treepz/'>
 
                     <Image
                         src="/techs/techeconomy.png"
@@ -25,7 +26,7 @@ const TechCommLogos = () => {
                         height={32}
                     />
                 </Link>
-                <Link href='https://techcabal.com/tag/treepz/'>
+                <Link target="_blank" href='https://techcabal.com/tag/treepz/'>
 
                     <Image
                         src="/techs/TechCabal.png"
@@ -34,7 +35,7 @@ const TechCommLogos = () => {
                         height={40}
                     />
                 </Link>
-                <Link href='https://techbuild.africa/treepz-4-million-passengers-destination-endless/'>
+                <Link target="_blank" href='https://techbuild.africa/treepz-4-million-passengers-destination-endless/'>
 
                     <Image
                         src="/techs/treepz-build.png"
@@ -44,7 +45,7 @@ const TechCommLogos = () => {
                     />
 
                 </Link>
-                <Link href='https://techpoint.africa/2023/02/14/treepz-launches-in-kenya/'>
+                <Link target="_blank" href='https://techpoint.africa/2023/02/14/treepz-launches-in-kenya/'>
 
                     <Image
                         src="/techs/Techpoint.png"
@@ -53,7 +54,7 @@ const TechCommLogos = () => {
                         height={40}
                     />
                 </Link>
-                <Link href='https://disrupt-africa.com/2023/10/17/nigerias-treepz-octamile-partner-to-launch-insurance-program-for-travellers-hosts/'>
+                <Link target="_blank" href='https://disrupt-africa.com/2023/10/17/nigerias-treepz-octamile-partner-to-launch-insurance-program-for-travellers-hosts/'>
 
                     <Image
                         src="/techs/disrupt-icon.png"
