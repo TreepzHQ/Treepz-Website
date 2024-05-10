@@ -207,7 +207,6 @@ export const MainPartnerData: OurPartnerProps[] = [
 
   { src: "logo-2.png" },
   { src: "logo-3.png" },
-  { src: "logo-4.png" },
   { src: "Techstars.png" },
   { src: "logo-6.png" },
 

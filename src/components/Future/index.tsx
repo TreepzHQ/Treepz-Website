@@ -8,8 +8,8 @@ const FutureTransportation = () => {
       <h1 className="font-bold text-[28px] uppercase leading-[32px] text-[#212529] text-center sm:text-left mb-[92px]">
         TREEPZ IS YOUR GO-TO TRANSPORT SOLUTION
       </h1>
-      <div className="flex w-full justify-between flex-wrap gap-10">
-        {FutureData.map(({ icon, title, description }) => (
+      <div  className="grid grid-cols-1 sm:grid-cols-4 w-full gap-10">  
+                {FutureData.map(({ icon, title, description }) => (
           <CardItem
             icon={icon}
             title={title}

@@ -46,7 +46,7 @@ const BetterTogetherComponent = () => {
               </Button>
               <Button
                 variant={"outline"}
-                className="!bg-transparent text-white border-white w-fit sm:w-[156px] hover:text-white sm:h-[64px] group overflow-hidden relative"
+                className="!bg-transparent text-white border-white w-full sm:w-[156px] hover:text-white sm:h-[64px] group overflow-hidden relative"
                 onClick={showModal}
               >
                 <span className="transition-transform duration-700 ease-in-out absolute top-0 left-0 w-full h-full flex items-center justify-center group-hover:transform group-hover:-translate-y-full">
