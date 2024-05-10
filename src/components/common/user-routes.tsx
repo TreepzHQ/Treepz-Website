@@ -14,7 +14,7 @@ const UserRoutesComponent: React.FC<RoutesProps> = ({ title, desc, mainSrc = "bu
             <h1 className="text-2xl font-bold mb-2 sm:mb-6">
               {title}
             </h1>
-            <p className="text-lg sm:text-xl w-full sm:w-[550px]">
+            <p className="text-lg sm:text-xl w-full sm:w-[550px] text-[#4D5154]">
               {desc}
             </p>
 

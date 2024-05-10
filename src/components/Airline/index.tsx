@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
 import { Button } from "../ui/button";
@@ -8,6 +9,7 @@ import {
   AirlineUniqueData,
   AccordionData,
   MiniPartnerData,
+  ExecutivePartnerData,
 } from "@/lib/dummyData";
 import TimerIcon from "@/assets/svgs/timer.svg";
 import ChevronRightIcon from "@/assets/svgs/chervon-right-nav.svg";
@@ -17,7 +19,7 @@ import PopularCitiesCarousel from "@/components/common/PopularCitiesCarousel";
 import Link from 'next/link'
 import GetAQuote from '@/components/common/get-a-quote'
 import UserRoutesComponent from '@/components/common/user-routes'
-
+import { useModal } from "@/contexts/ModalContext";
 const NeededInformations = [
   "Recurring Airport Shuttle Journeys",
   "Hotels with Airport Shuttle: Take Convenience to New Heights",
@@ -27,20 +29,16 @@ const NeededInformations = [
 ];
 
 const AirlineComponent = () => {
+    const {showModal} = useModal()
   return (
     <div>
       <div className="bg-[url(/airline-hero.png)] bg-cover bg-no-repeat w-full h-[650px] sm:h-[708px] mt-10 sm:mt-20">
         <div className="w-full sm:w-[702px] mx-auto text-white pt-[60px] sm:pt-[100px] px-4">
           <h1 className="font-bold text-[28px] leading-[40px] sm:text-[56px] sm:leading-[64px] mb-[28px] uppercase text-center">
-            For Global Journeys, Choose Treepz’s Airport Shuttle Service
+Stress-free arrivals guaranteed
           </h1>
           <p className="text-base sm:text-xl text-center">
-            Welcome aboard our airport shuttle service – we are here and ready
-            to transfer you to your airport (please familiarize yourself with
-            our safety instructions in the seat pocket in front of you). If you
-            are arranging overseas travel for business or going on a
-            well-deserved vacation, Treepz will take care of the wheels on the
-            ground with a whole host of choices.
+          Skip the airport hassle, choose comfort. Treepz takes you and your visitors to and from the airport with ease.
           </p>
           <Button
             variant={"default"}
@@ -59,7 +57,7 @@ const AirlineComponent = () => {
           Trusted by the Best in Business
         </p>
         <div className="grid grid-cols-3 gap-3 sm:flex sm:flex-row justify-between items-center">
-          {MiniPartnerData.map(({ src }: any) => (
+          {ExecutivePartnerData.map(({ src }: any) => (
             <OurPartners src={src} key={src} />
           ))}
         </div>
@@ -69,17 +67,11 @@ const AirlineComponent = () => {
           Great Fliers Don’t Flap – They Treepz
         </h1>
         <p className="text-xl text-[#4D5154] text-center">
-          Our airport shuttle services are tailored to suit your needs – you
-          might be traveling solo, with a group, or with a mountain of luggage
-          (we know how it is). Either way, your journey to catch your flight
-          will be clean and comfortable and have ample storage space so you can
-          relax and look forward to your trip. We offer flexible scheduling
-          24/7, so you can always choose a departure time that aligns perfectly
-          with your travel plans.
+    Treepz tailors airport shuttles to your needs, whether you're flying solo, with a group, or luggage mountains high. Choose the perfect departure time, relax in comfort, and arrive on time - stress-free and ready to explore.
         </p>
       </div>
       {/* unique */}
-      <div className="container px-4 sm:px-20 flex flex-col sm:flex-row gap-4 sm:flex-wrap">
+      <div className="container px-4 sm:px-20 flex  mt-4 sm:mt-[88px] sm:grid sm:grid-cols-3 flex-col gap-4 sm:flex-wrap sm:mb-[86px]">
         {AirlineUniqueData.map(({ icon, title, description }) => (
           <Postal
             icon={icon}
@@ -184,6 +176,8 @@ const AirlineComponent = () => {
               <Button
                 variant={"default"}
                 className="cursor-pointer rounded-full font-medium text-gray-900 flex items-center gap-2 mt-6 w-fit sm:mt-10 sm:mb-[48px]"
+
+                            onClick={showModal}
                 //onClick={() => {}}
               >
                 Become a Treepz partner
@@ -268,9 +262,30 @@ const AirlineComponent = () => {
               </li>
               <li>Rest assured that every journey is carbon neutral</li>
             </ul>
+
+            <h1 className="font-semibold text-xl sm:text-[28px] sm:leading-[36px]" id="info_5">
+                        Supporting Local Businesses
+            </h1>
+            <p>
+           Did you know that, when you use Treepz’s airport shuttle, you are also supporting small, local business owners in your local area? That’s because we are passionate advocates for small business owners all over the world. 
+            </p>
+<p className="my-6">We carefully select the finest network of local drivers who are:</p>
+            <ul className="list-disc list-inside sm:list-outside">
+              <li>
+             Screened small business owners
+              </li>
+              <li>
+             Background inspected and fully insured
+              </li>
+              <li>
+             People who really care about providing great transportation
+              </li>
+              <li>Provided with Treepz’s awesome technology to provide a stellar experience</li>
+            </ul>
             <Button
               variant={"default"}
               className="cursor-pointer rounded-full font-semibold text-gray-900 flex items-center gap-2 mt-6 w-fit sm:mt-10 sm:mb-[48px]"
+                            onClick={showModal}
               //onClick={() => {}}
             >
               Speak to the Treepz Team
@@ -301,8 +316,7 @@ const AirlineComponent = () => {
       <div className="mt-20">
         <PopularCitiesCarousel />
       </div>
-      <TechCommLogos />
-      <BetterTogetherComponent />
+   
     </div>
   );
 };

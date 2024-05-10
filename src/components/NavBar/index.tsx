@@ -109,7 +109,7 @@ const handleSubMenuItemClick = () => {
      };
   return (
     <div
-      className={`w-full sm:max-w-[1691px]  h-16 sm:h-[72px] mx-auto flex justify-between items-center py-[20px] px-4 sm:px-20 fixed top-0 z-50 ${bgClass}`}
+      className={`w-full sm:max-w-[1691px]  h-16 sm:h-[72px] mx-auto flex justify-between items-center py-[20px] px-4 sm:px-20 fixed top-0 z-50 ${pathname === "/contact" ? "bg-[#FFFBF1]" : bgClass || 'bg-white'}`}
     >
       <div className="flex sm:w-[702px] justify-between items-center">
         <span className="cursor-pointer mr-10" onClick={() => router.push("/")}>
@@ -118,7 +118,7 @@ const handleSubMenuItemClick = () => {
         <NavigationMenu className="hidden sm:inline-block">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={bgClass} >Solutions</NavigationMenuTrigger>
+              <NavigationMenuTrigger className={` ${pathname === "/contact" ? "bg-[#FFFBF1]" : bgClass}`} >Solutions</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className={`${bgClass} grid gap-3 p-6 sm:w-[900px] lg:w-[900px] lg:grid-cols-3`}>
                   <li className="row-span-2">
@@ -207,7 +207,7 @@ const handleSubMenuItemClick = () => {
 
             {/* Group Transportation Services */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className={`hover:!bg-none ${bgClass}`}>
+              <NavigationMenuTrigger className={`hover:!bg-none ${pathname === "/contact" ? "bg-[#FFFBF1]" : bgClass}`}>
                 Group Transportation Services
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -243,14 +243,14 @@ const handleSubMenuItemClick = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink className={`${bgClass} ${navigationMenuTriggerStyle()} `}>
+                <NavigationMenuLink className={`${pathname === "/contact" ? "bg-[#FFFBF1]" : bgClass} ${navigationMenuTriggerStyle()} `}>
                   About us
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/contact" legacyBehavior passHref>
-                <NavigationMenuLink className={`${bgClass} ${navigationMenuTriggerStyle()} `}>
+                <NavigationMenuLink className={`${pathname === "/contact" ? "bg-[#FFFBF1]" : bgClass} ${navigationMenuTriggerStyle()} `}>
                   Contact us
                 </NavigationMenuLink>
               </Link>

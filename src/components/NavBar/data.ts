@@ -143,7 +143,7 @@ export const GroupFirstColumn: SubMenuProps[] = [
   // },
   {
     label: "For Wedding",
-    href: "/wedding",
+    href: "/wedding-transportation",
   },
   {
     label: "For Governments",
