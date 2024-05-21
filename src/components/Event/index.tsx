@@ -13,6 +13,7 @@ import GetAQuote from '@/components/common/get-a-quote'
 import UserRoutesComponent from '@/components/common/user-routes'
 import { useModal } from '@/contexts/ModalContext';
 
+import { useEventModal } from '@/contexts/EventModalContext';
 import {
   Accordion,
   AccordionContent,
@@ -23,7 +24,7 @@ import StaticPartners from '../common/static-partners';
 
 
 const EventComponent = () => {
-    const {showModal} = useModal()
+    const {showModal} = useEventModal()
   return (
     <div>
       <div className="bg-[url(/Hero.png)] bg-cover bg-no-repeat w-full h-[519px] sm:h-[708px] sm:mt-20">

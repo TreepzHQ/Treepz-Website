@@ -1,6 +1,6 @@
 import React from "react";
 import { X } from "lucide-react"
-import { useModal } from "@/contexts/ModalContext";
+import { useEventModal } from "@/contexts/EventModalContext";
 
 interface ModalProps {
   title?: string;
@@ -8,13 +8,13 @@ interface ModalProps {
 }
 
 
-const ModalComponent: React.FC<ModalProps> = ({  children, title }) => {
-  const { isModalVisible, hideModal } = useModal();
+const EventModalComponent: React.FC<ModalProps> = ({  children, title }) => {
+  const { isModalVisible, hideModal } = useEventModal();
 
   if (!isModalVisible) return null;
-  return (
+    return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-gray-800 bg-opacity-75 flex justify-center items-center p-8">
-          <div className="bg-white shadow-lg rounded-2xl w-full max-w-[600px]">
+            <div className="bg-white shadow-lg rounded-2xl w-full max-w-[600px]">
             <div className="flex justify-between items-center border-b p-5 relative">
               <p>{title}</p>
               <button
@@ -33,4 +33,4 @@ const ModalComponent: React.FC<ModalProps> = ({  children, title }) => {
   );
 };
 
-export default ModalComponent;
+export default EventModalComponent;

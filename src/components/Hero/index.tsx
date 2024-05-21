@@ -10,7 +10,7 @@ import ModalComponent from '../Modal';
 import BookNowForm from '../Forms/BookNowForm';
 import Marquee from '../common/Marquee';
 import { useModal } from '@/contexts/ModalContext';
-
+import { useEventModal } from '@/contexts/EventModalContext';
 const HeroComponent = () => {
   const router = useRouter()
   const { showModal } = useModal();
