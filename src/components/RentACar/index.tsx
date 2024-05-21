@@ -28,16 +28,16 @@ const RentACarComponent = () => {
             alt="without limit"
             fill
             priority
-            className="absolute object-contain"
+            className="absolute  object-contain"
           />
-          <div className="absolute w-full mx-auto space-y-[18px] px-4 mx-4 bottom-4">
+          <div className="absolute w-full sm:mx-auto space-y-[18px] px-4 mx-4 bottom-4">
             <p className="mt-[20px] text-white text-base sm:text-lg leading-[40px]">
               Explore without limits. <br />
               Find your next ride.
             </p>
             <Button
               variant={"default"}
-              className="rounded-lg w-full !h-10 group relative overflow-hidden"
+              className=" rounded-lg sm:w-full w-[200px] !h-10 group relative overflow-hidden"
               onClick={showModal}
             >
                <span className="transition-transform duration-700 ease-in-out absolute top-0 left-0 w-full h-full flex items-center justify-center group-hover:transform group-hover:-translate-y-full">

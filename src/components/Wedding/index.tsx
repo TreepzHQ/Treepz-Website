@@ -9,8 +9,10 @@ import { WeddingPostalData } from '@/lib/dummyData'
 import { useModal } from "@/contexts/ModalContext";
 import { useRouter } from 'next/navigation';
 
+import { useEventModal } from '@/contexts/EventModalContext';
 const WeddingComponent = () => {
-       const { showModal } = useModal();
+       const { showModal } = useEventModal();
+    
        const router = useRouter()
 
     return (
