@@ -9,9 +9,10 @@ import Testimony from '@/components/common/testimony'
 import ChevronRightIcon from '@/assets/svgs/chervon-right-nav.svg'
 import { useModal } from '@/contexts/ModalContext';
 
+import { useEventModal } from '@/contexts/EventModalContext';
 import { usePathname, useRouter } from 'next/navigation'
 const ConferenceComponent = () => {
-const {showModal} = useModal();
+const {showModal} = useEventModal();
     const router = useRouter();
     return (
       <>
