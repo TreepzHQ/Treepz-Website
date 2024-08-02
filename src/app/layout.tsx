@@ -11,14 +11,10 @@ import { EventModalProvider } from "@/contexts/EventModalContext";
 import { ReactNode } from "react";
 import ModalComponent from "@/components/Modal";
 import BookNowForm from "@/components/Forms/BookNowForm";
-<<<<<<< Updated upstream
 import EventModalComponent from "@/components/EventModal";
 import toast, { Toaster } from "react-hot-toast";
 import EventForm from "@/components/Forms/EventForm";
-=======
-import { GoogleTagManager } from '@next/third-parties/google';
-import toast, { Toaster } from 'react-hot-toast';
->>>>>>> Stashed changes
+import { GoogleTagManager } from '@next/third-parties/google'
 const myFont = localFont({
   src: [
     {
