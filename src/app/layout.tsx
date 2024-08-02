@@ -11,9 +11,14 @@ import { EventModalProvider } from "@/contexts/EventModalContext";
 import { ReactNode } from "react";
 import ModalComponent from "@/components/Modal";
 import BookNowForm from "@/components/Forms/BookNowForm";
+<<<<<<< Updated upstream
 import EventModalComponent from "@/components/EventModal";
 import toast, { Toaster } from "react-hot-toast";
 import EventForm from "@/components/Forms/EventForm";
+=======
+import { GoogleTagManager } from '@next/third-parties/google';
+import toast, { Toaster } from 'react-hot-toast';
+>>>>>>> Stashed changes
 const myFont = localFont({
   src: [
     {
@@ -51,6 +56,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-9R71XZ52DX" />
       <body className={myFont.className}>
         <div className="flex flex-col !bg-white">
                <EventModalProvider>
