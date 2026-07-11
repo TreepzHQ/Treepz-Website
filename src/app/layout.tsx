@@ -1,5 +1,5 @@
 // layout.tsx
-'use client'
+"use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
@@ -7,11 +7,14 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ModalProvider } from "@/contexts/ModalContext";
+import { EventModalProvider } from "@/contexts/EventModalContext";
 import { ReactNode } from "react";
 import ModalComponent from "@/components/Modal";
 import BookNowForm from "@/components/Forms/BookNowForm";
-
-import toast, { Toaster } from 'react-hot-toast';
+import EventModalComponent from "@/components/EventModal";
+import toast, { Toaster } from "react-hot-toast";
+import EventForm from "@/components/Forms/EventForm";
+import { GoogleTagManager } from '@next/third-parties/google'
 const myFont = localFont({
   src: [
     {
@@ -49,17 +52,24 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-9R71XZ52DX" />
       <body className={myFont.className}>
         <div className="flex flex-col !bg-white">
+               <EventModalProvider>
           <ModalProvider>
             <NavBar />
             {children}
             <Footer />
+                        <EventModalComponent title="Event Form">
+
+              <EventForm />
+                        </EventModalComponent>
             <ModalComponent title="Book Now & Contact us">
               <BookNowForm />
             </ModalComponent>
-                        <Toaster/>
+            <Toaster />
           </ModalProvider>
+                    </EventModalProvider> 
         </div>
       </body>
     </html>

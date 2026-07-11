@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-
+import { format } from "date-fns";
 export async function POST(req: NextRequest) {
   // Destructure the form data from the request body
   const {
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
         <p><b>First Name:</b> ${first_name}</p>
         <p><b>Last Name:</b> ${last_name}</p>
         <p><b>Email:</b> ${email}</p>
-        <p><b>Range:</b> ${range}</p>
+        <p><b>Range:</b> From: ${format(range.from, "LLL dd, y")} To: ${format(range.to, "LLL dd, y")}</p>
         <p><b>Estimated Passengers:</b> ${estimated_passengers}</p>
         <p><b>Type of Transportation:</b> ${type_of_transportation}</p>
         <p><b>Description:</b> ${describe}</p>

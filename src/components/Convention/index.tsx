@@ -30,11 +30,12 @@ const NeededInformations = [
   "Carbon neutral",
   "Options for convention shuttles",
   "How much does it cost for convention transportation near me?",
-  "Book EASY Convention Transporation",
+  "Book EASY Convention Transporation"
 ];
 
+import { useEventModal } from '@/contexts/EventModalContext';
 const ConventionComponent = () => {
-  const { showModal } = useModal();
+  const { showModal } = useEventModal();
   return (
     <div>
       <div className="bg-[url(/Hero-convention.png)] bg-cover bg-no-repeat w-full h-[519px] sm:h-[708px] sm:mt-20">
@@ -142,7 +143,10 @@ const ConventionComponent = () => {
                 vehicle selection for your convention.
               </p>
             </div>
-            <h1 id="info-3" className="font-semibold text-xl sm:text-[28px] sm:leading-[36px]">
+            <h1
+              id="info-3"
+              className="font-semibold text-xl sm:text-[28px] sm:leading-[36px]"
+            >
               Our conference shuttle services
             </h1>
             <div className="space-y-6 text-[#6F7174] text-lg">
@@ -182,10 +186,10 @@ const ConventionComponent = () => {
             <div className="flex flex-col space-y-6 ">
               <div className="text-lg text-[#6F7174]">
                 <p>
-                  Got special requirements? We can take care of them – just talk
-                  to our team at Treepz and request a FREE, customized quote for
-                  your convention transportation. Every trip we take you on will
-                  be:
+                  Got special requirements? We can take care of them – just
+                  talkj to our team at Treepz and request a FREE, customized
+                  quote for your convention transportation. Every trip we take
+                  you on will be:
                 </p>
                 <ul className="list-disc space-y-3">
                   <li>Comfortable</li>
@@ -239,7 +243,10 @@ const ConventionComponent = () => {
               </div>
             </div>
 
-            <h1 id="info-7" className="font-semibold text-xl sm:text-[28px] sm:leading-[36px] my-6">
+            <h1
+              id="info-7"
+              className="font-semibold text-xl sm:text-[28px] sm:leading-[36px] my-6"
+            >
               Choose your own vehicles
             </h1>
 
@@ -266,7 +273,7 @@ const ConventionComponent = () => {
               <Image src="/carbon.png" alt="Carbon" layout="fill" />
             </div>
           </div>
-          <div id="info-9"  className="mt-[24px] border-b pb-11">
+          <div id="info-9" className="mt-[24px] border-b pb-11">
             <h1 className="font-semibold text-xl sm:text-[28px] sm:leading-[36px] mb-6">
               Options for Convention shuttles
             </h1>
@@ -299,42 +306,41 @@ const ConventionComponent = () => {
               </Button>
             </div>
           </div>
-   <div id="info-10" className="mt-[24px] border-b pb-11">
-        <h1 className="font-semibold text-xl sm:text-[28px] sm:leading-[36px] mb-6">
-          How much does it cost for convention transportation near me?
-        </h1>
-        <div className="flex flex-col space-y-6 ">
-          <div className="text-lg text-[#6F7174]">
-            The cost of your convention transportation depends on a few things
-            like where you need your passengers to go, how long the conference
-            shuttle service is running, and how many vehicles you require.
-            Contact Treepz to request a FREE, bespoke quote for your conference
-            transportation.
-          </div>
-        </div>
-      </div>{" "}
-      <div id="info-11"  className="mt-[24px]  pb-11">
-        <h1 className="font-semibold text-xl sm:text-[28px] sm:leading-[36px] mb-6">
-          Book EASY Convention Transportation
-        </h1>
-        <div className="flex flex-col space-y-6 mb-[40px] ">
-          <div className="text-lg text-[#6F7174]">
-            Don't hesitate. Discover our convention transportation services
-          </div>
-        </div>
-        <Button
-          className="bg-[#F8B02B] flex py-[16px] px-5 font-semibold rounded-[32px]"
-          onClick={showModal}
-        >
-          {" "}
-          Book easy convention transportation{" "}
-          <ChevronRightIcon className="ml-2 w-6 h-6" />{" "}
-        </Button>
-      </div>{" "}
-
+          <div id="info-10" className="mt-[24px] border-b pb-11">
+            <h1 className="font-semibold text-xl sm:text-[28px] sm:leading-[36px] mb-6">
+              How much does it cost for convention transportation near me?
+            </h1>
+            <div className="flex flex-col space-y-6 ">
+              <div className="text-lg text-[#6F7174]">
+                The cost of your convention transportation depends on a few
+                things like where you need your passengers to go, how long the
+                conference shuttle service is running, and how many vehicles you
+                require. Contact Treepz to request a FREE, bespoke quote for
+                your conference transportation.
+              </div>
+            </div>
+          </div>{" "}
+          <div id="info-11" className="mt-[24px]  pb-11">
+            <h1 className="font-semibold text-xl sm:text-[28px] sm:leading-[36px] mb-6">
+              Book EASY Convention Transportation
+            </h1>
+            <div className="flex flex-col space-y-6 mb-[40px] ">
+              <div className="text-lg text-[#6F7174]">
+                Don't hesitate. Discover our convention transportation services
+              </div>
+            </div>
+            <Button
+              className="bg-[#F8B02B] flex py-[16px] px-5 font-semibold rounded-[32px]"
+              onClick={showModal}
+            >
+              {" "}
+              Book easy convention transportation{" "}
+              <ChevronRightIcon className="ml-2 w-6 h-6" />{" "}
+            </Button>
+          </div>{" "}
         </div>
       </div>
-         <div className="container px-4 sm:px-20 w-full sm:max-w-[1022px] mx-auto flex flex-col">
+      <div className="container px-4 sm:px-20 w-full sm:max-w-[1022px] mx-auto flex flex-col">
         <h1 className="font-semibold text-xl sm:text-2xl mb-6">
           Explore our most popular cities
         </h1>
@@ -352,4 +358,3 @@ const ConventionComponent = () => {
 };
 
 export default ConventionComponent;
-

@@ -1,6 +1,5 @@
 import React from "react";
 import { X } from "lucide-react"
-import XCloseIcon from '@/assets/svgs/x-icon.svg'
 import { useModal } from "@/contexts/ModalContext";
 
 interface ModalProps {

@@ -23,13 +23,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { DateRange } from "react-day-picker"
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from '../ui/textarea';
+import { addDays, format } from "date-fns"
+import { cn } from "@/lib/utils"
+import { Calendar as CalendarIcon } from "lucide-react"
+
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
 import toast from 'react-hot-toast';
 const formSchema = z.object({
   first_name: z.string().min(2).max(50),
-  range: z.string(),
+  range: z.object({
+    from: z.date(),
+    to: z.date(),
+  }),
   estimated_passengers: z.string(),
   type_of_transportation: z.string(),
   describe: z.string(),
@@ -41,12 +56,11 @@ const formSchema = z.object({
 });
 
 const BookNowForm = () => {
-
     const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       first_name: "",
-      range: "",
+      range:{} ,
       estimated_passengers: '1',
       type_of_transportation:"",
       describe: "",
@@ -75,7 +89,7 @@ const BookNowForm = () => {
             toast.success('Form submitted successfully!');
       form.reset({
         first_name: "",
-        range: "",
+        range: {},
         estimated_passengers: "1",
         type_of_transportation: "",
         describe: "",
@@ -104,25 +118,60 @@ const BookNowForm = () => {
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-          <FormField
-            control={form.control}
-            name="range"
-            render={({ field }) => (
-              <FormItem>
+ <FormField
+      control={form.control}
+      name="range"
+      render={({ field }) => (
+        <FormItem>
+
                 <FormLabel>
                   When is your trip?{" "}
                   <sup className="text-red-500 font-bold">*</sup>
                 </FormLabel>
-                <FormControl className="w-full">
-                  <Input
-                    placeholder="Please use a range of dates for multiple days trip"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <FormControl>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button
+                  variant={"outline"}
+                  className={cn(
+                    "w-full justify-start text-left font-normal rounded-sm !border-input",
+                    !field.value && "text-muted-foreground",
+                  )}
+                >
+                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  {field.value?.from ? (
+                    field.value.to ? (
+                      <>
+                        {format(field.value.from, "LLL dd, y")} -{" "}
+                        {format(field.value.to, "LLL dd, y")}
+                      </>
+                    ) : (
+                      format(field.value.from, "LLL dd, y")
+                    )
+                  ) : (
+                    <span>Pick a date</span>
+                  )}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0" align="start">
+                <Calendar
+                  initialFocus
+                  mode="range"
+                  defaultMonth={field.value?.from}
+                  selected={field.value}
+                  onSelect={field.onChange}
+                  numberOfMonths={2}
+                />
+              </PopoverContent>
+            </Popover>
+          </FormControl>
+          <FormDescription>
+Select a range of dates for multiple days trip
+          </FormDescription>
+          <FormMessage />
+        </FormItem>
+      )}
+    />
           <div className="w-full flex flex-col sm:flex-row space-y-3 sm:space-y-0 justify-between">
             <FormField
               control={form.control}
